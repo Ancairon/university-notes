@@ -10,7 +10,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "db_design_notepad.md",
+            "file": "readme.md",
             "mode": "source"
           }
         },
@@ -23,7 +23,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "db_design_notepad.md",
+            "file": "readme.md",
             "mode": "preview"
           }
         },
@@ -83,7 +83,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "db_design_notepad.md",
+                "file": "readme.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -103,8 +103,8 @@
   },
   "active": "f20cf9e46098079e",
   "lastOpenFiles": [
+    "Untitled.md",
     "db_design_notepad.md",
-    "android_dev_notepad.md",
-    "Untitled.md"
+    "android_dev_notepad.md"
   ]
 }
