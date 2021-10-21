@@ -12,4 +12,4 @@ Circuit switching
 # 21-20-21
 
 
-[link](www.google.gr){:target="_blank"}
+[link](www.google.gr)<a :target="_blank">
