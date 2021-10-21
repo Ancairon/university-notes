@@ -11,5 +11,4 @@ Circuit switching
 
 # 21-20-21
 
-
-[link](www.google.gr)<a :target="_blank">
+<a href="https://www.dit.hua.gr/index.php/en/" target="_blank">example</a>
