@@ -186,4 +186,8 @@ eclass σελ 21==
 
 ==+Β και Β+ δέντρα==
 
-
+ψάχνω τι ει:
+B TREE INDEX 
+HASH
+INVERTED INDEX
+BITMAP INDEX

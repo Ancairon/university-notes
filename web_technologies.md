@@ -6,3 +6,10 @@ Circuit switching
 
 
 ![[Pasted image 20211014203021.png]]
+
+
+
+# 21-20-21
+
+
+[link](www.google.gr){:target="_blank"}
