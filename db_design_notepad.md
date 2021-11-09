@@ -191,3 +191,84 @@ B TREE INDEX
 HASH
 INVERTED INDEX
 BITMAP INDEX
+
+
+
+## 26/10/21
+
+Oracle DATE,TIME,STRING functions για εργασία
+
+Κόστη στις πράξεις:
+
+1. WHERE = 
+2. WHERE ><
+3. JOIN
+4. ORDER BY / GROUP BY
+
+Γενικά μας συμφέρει να βάζουμε τα `σ`*(επιλογές)* πιο κοντά στους πίνακες ώστε να χειρίζομαι όσο το δυνατόν λιγότερα blocks.
+
+
+
+#### Παράδειγμα
+
+1 εκ εγγραφές | R=10^6
+Κάθε μπλοκ χωράει 100 εγγραφές αρχείων | bfr = 100 εγγραφες/μπλοκ
+
+1. Πόσα μπλοκ χωράει το αρχείο 
+B=R/bfr=10^6/100=10.000 block
+
+
+2. Πυκνό Ευρετήριο στο Α
+bfr(i) = 1000 εγγραφές ευρετηρίου/μπλοκ
+B(index)=R(index)/bfr(index)=10^6/1000=1000block
+Κόστος είναι 10^6
+
+3. Πυκνό ευρετήριο 1 επιπέδου
+κόστος αναζήτησης log2(1000)=~10
+
+4. E(Α<Κ)(R) A<K πρέπει να ψάξω σττο 20% του ευρετηρίου 200 block index
+Kόστος(Α<Κ ευρετήριο) = 20+200 block
+Χειρότερη -> Κόστος αρχείο  = ολο το αρχείο για να βρω 200000 εγγραφές
+Καλύτερη -> 20% του 10000 = 2000
+
+==+Διαφάνεια 22==
+R<sub>κ</sub>=40 bytes R<sub>N</sub>=50bytes
+bfr<sub>κ</sub>=100tuple/blocks bfr<sub>Ν</sub> = 80
+b<sub>κ</sub>= 1000 blocks b<sub>Ν</sub>=500
+r<sub>κ</sub> = 100.000tuples r<sub>Ν</sub> = 40.000
+
+
+
+Συνένωση εμφωλευμένων βρογχων 
+ουσιαστικά θα διαβάσω 1000 φορες τα 500 μπλοκ των ναυτικων b<sub>k</sub>*b<sub>Ν</sub>+b<sub>k</sub>
+
+
+
+## 9/11/21
+Plans, Cost, Indexes
+
+```
+CREATE TABLE THEORDERS AS SELECT * FROM XSALES.ORDERS;
+
+CREATE TABLE THECUSTOMERS AS SELECT * FROM XSALES.CUSTOMERS;
+
+
+DELETE FROM PLAN_TABLE;
+
+
+
+EXPLAIN PLAN FOR 
+SELECT ID,NAME,CREDIT_LIMIT 
+FROM THECUSTOMERS
+WHERE MARITAL_STATUS = 'single' AND GENDER = 'Female' AND CREDIT_LIMIT>10000;
+
+SELECT COUNT(*) FROM THEORDERS;
+
+SELECT * FROM PLAN_TABLE
+START WITH ID=0
+CONNECT BY PRIOR ID= PARENT_ID;
+
+CREATE INDEX cope_index 
+   ON THECUSTOMERS (id,name,credit_limit,marital_status,gender);
+   ```
+
