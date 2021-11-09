@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">My Application</string>
+    <string name="textview_value">Hello world</string>
+    <string name="edittext_value">Edit text value</string>
+</resources>
