@@ -245,6 +245,7 @@ r<sub>κ</sub> = 100.000tuples r<sub>Ν</sub> = 40.000
 
 
 ## 9/11/21
+
 Plans, Cost, Indexes
 
 ```
@@ -271,4 +272,9 @@ CONNECT BY PRIOR ID= PARENT_ID;
 CREATE INDEX cope_index 
    ON THECUSTOMERS (id,name,credit_limit,marital_status,gender);
    ```
+
+
+
+
+
 
